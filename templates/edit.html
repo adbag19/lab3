@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="container signup-section">
+    <div class="section-content">
+      <h2>Edit User</h2>
+      <p>You are editing {{userdetails.first_name}} with age: {{userdetails.age}}</p>
+
+      <form action="/edit/{{userdetails.user_id}}" method="POST">
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" name="first_name" value="{{userdetails.first_name}}">
+          <label>Age:</label>
+          <input type="text" name="age" value="{{userdetails.age}}">
+          <button type="submit" name="button">Update</button>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}

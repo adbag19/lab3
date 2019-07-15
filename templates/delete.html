@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="container signup-section">
+    <div class="section-content">
+      <h2>Delete User</h2>
+      <p>You are <b>deleting</b> {{userdetails.first_name}} with age: {{userdetails.age}}</p>
+
+      <form action="/delete/{{userdetails.user_id}}" method="POST">
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" name="first_name" value="{{userdetails.first_name}}" readonly>
+          <label>Age:</label>
+          <input type="text" name="age" value="{{userdetails.age}}" readonly>
+          <button type="submit" onclick="confirm('Are you sure... Do you want to delete {{userdetails.first_name}}')">Delete</button>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}
